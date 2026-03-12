@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Barlow', sans-serif;
+    background-color: #0F172A;
+    color: #F1F5F9;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-amber-500 hover:bg-amber-400 text-steel-950 font-display font-bold uppercase tracking-widest px-6 py-3 transition-all duration-200 text-sm;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  
+  .btn-secondary {
+    @apply border border-steel-600 hover:border-amber-500 hover:text-amber-500 text-steel-300 font-display uppercase tracking-widest px-6 py-3 transition-all duration-200 text-sm;
+  }
+
+  .input-field {
+    @apply w-full bg-steel-800 border border-steel-600 focus:border-amber-500 text-steel-100 px-4 py-3 outline-none transition-colors duration-200 placeholder-steel-500;
+    font-family: 'Barlow', sans-serif;
+  }
+
+  .input-label {
+    @apply block text-xs font-display font-semibold uppercase tracking-widest text-steel-400 mb-2;
+  }
+
+  .card {
+    @apply bg-steel-800 border border-steel-700 hover:border-amber-500/50 transition-all duration-300;
+  }
+  
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-mono uppercase tracking-wider;
+  }
+
+  .page-container {
+    @apply min-h-screen bg-steel-950;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E293B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F59E0B;
+}
+
+/* Grid texture overlay */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Diagonal stripe pattern for accents */
+.stripe-accent {
+  background: repeating-linear-gradient(
+    45deg,
+    #F59E0B,
+    #F59E0B 4px,
+    #1E293B 4px,
+    #1E293B 12px
+  );
+}
+
+/* Corner cut utility */
+.cut-corner {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.cut-corner-sm {
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
